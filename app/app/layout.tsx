@@ -1,4 +1,7 @@
+'use client'
+
 import { NavigationBar } from '@/components/navigation-bar'
+import { AIAssistantFloating } from '@/components/ai-assistant-floating'
 
 export default function AppLayout({
   children,
@@ -13,6 +16,7 @@ export default function AppLayout({
           {children}
         </div>
       </main>
+      <AIAssistantFloating />
     </div>
   )
 }
