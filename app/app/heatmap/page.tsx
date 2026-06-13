@@ -21,18 +21,19 @@ const HEATMAP_GRID = Array.from({ length: 120 }, (_, i) => ({
 
 export default function HeatmapPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-section">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        className="space-y-2"
       >
-        <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
+        <h1 className="flex items-center gap-3">
           <Globe className="w-8 h-8 text-neon-green" />
           Global Carbon Heatmap
         </h1>
-        <p className="text-muted-foreground">Real-time emission hotspots and regional impact</p>
+        <p className="text-lg text-muted-foreground font-light">Real-time emission hotspots and regional impact</p>
       </motion.div>
 
       {/* Interactive Heatmap */}
@@ -41,7 +42,7 @@ export default function HeatmapPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.1 }}
       >
-        <GlassmorphicCard>
+        <GlassmorphicCard premium>
           <h3 className="text-xl font-bold mb-6">World Emission Map</h3>
           <div className="grid grid-cols-12 gap-1 h-64 p-6 bg-dark-bg/50 rounded-lg overflow-hidden">
             {HEATMAP_GRID.map((cell) => (

@@ -5,6 +5,7 @@ interface GlassmorphicCardProps {
   className?: string
   onClick?: () => void
   hover?: boolean
+  premium?: boolean
 }
 
 export function GlassmorphicCard({
@@ -12,13 +13,18 @@ export function GlassmorphicCard({
   className = '',
   onClick,
   hover = true,
+  premium = false,
 }: GlassmorphicCardProps) {
   return (
     <div
       onClick={onClick}
-      className={`glass rounded-xl p-6 ${
-        hover ? 'transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20' : ''
-      } ${className}`}
+      className={`
+        rounded-2xl p-6 sm:p-8
+        transition-all duration-300 ease-out
+        ${premium ? 'glass-premium' : 'glass'}
+        ${hover ? 'hover-lift hover:shadow-2xl hover:shadow-emerald-500/10' : ''}
+        ${className}
+      `}
     >
       {children}
     </div>

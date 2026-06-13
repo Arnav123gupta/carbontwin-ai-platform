@@ -39,11 +39,11 @@ const RECENT_ACTIVITIES = [
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-section">
       {/* Header */}
-      <div>
-        <h1 className="text-4xl font-bold mb-2">Welcome back, Innovator</h1>
-        <p className="text-muted-foreground">Track your progress towards a sustainable future</p>
+      <div className="space-y-2">
+        <h1>Welcome back, Innovator</h1>
+        <p className="text-lg text-muted-foreground font-light">Track your progress towards a sustainable future</p>
       </div>
 
       {/* AI Carbon Avatar */}
@@ -77,7 +77,7 @@ export default function DashboardPage() {
       </motion.div>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
         {[
           {
             icon: Activity,
@@ -124,10 +124,10 @@ export default function DashboardPage() {
       </div>
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
         {/* Weekly Carbon Footprint */}
-        <GlassmorphicCard>
-          <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+        <GlassmorphicCard premium>
+          <h3 className="font-bold mb-6 flex items-center gap-2 text-lg">
             <Calendar className="w-5 h-5 text-neon-green" />
             Weekly Footprint
           </h3>

@@ -35,22 +35,22 @@ export default function CarbonTwinPage() {
   }
 
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="space-section animate-fade-in">
       {/* Header */}
-      <div>
-        <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
+      <div className="space-y-2">
+        <h1 className="flex items-center gap-3">
           <div className="w-12 h-12 bg-gradient-to-br from-neon-green to-neon-emerald rounded-full flex items-center justify-center">
             <Sparkles className="w-6 h-6 text-dark-bg" />
           </div>
           Your Carbon Twin
         </h1>
-        <p className="text-muted-foreground">AI-powered insights tailored to your lifestyle</p>
+        <p className="text-lg text-muted-foreground font-light">AI-powered insights tailored to your lifestyle</p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
         {/* Chat Section */}
         <div className="lg:col-span-2">
-          <GlassmorphicCard className="flex flex-col h-[600px]">
+          <GlassmorphicCard premium className="flex flex-col h-[600px]">
             {/* Messages */}
             <div className="flex-1 overflow-y-auto space-y-4 mb-4 pr-2">
               {messages.map((message, i) => (
