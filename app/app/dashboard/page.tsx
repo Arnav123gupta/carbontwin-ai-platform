@@ -2,8 +2,10 @@
 
 import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts'
 import { Activity, Leaf, Target, TrendingDown, Award, Calendar } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { StatsCard } from '@/components/stats-card'
 import { GlassmorphicCard } from '@/components/glassmorphic-card'
+import { ClimateScore } from '@/components/climate-score'
 
 const WEEKLY_DATA = [
   { day: 'Mon', carbon: 45, target: 40 },
@@ -33,46 +35,77 @@ const RECENT_ACTIVITIES = [
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="space-y-8">
       {/* Header */}
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <h1 className="text-4xl font-bold mb-2">Welcome back, Innovator</h1>
         <p className="text-muted-foreground">Track your progress towards a sustainable future</p>
-      </div>
+      </motion.div>
+
+      {/* Climate Score */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <ClimateScore score={742} />
+      </motion.div>
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatsCard
-          icon={Activity}
-          label="Today's Footprint"
-          value="32"
-          unit="kg CO₂"
-          trend="down"
-          trendValue="8% less"
-        />
-        <StatsCard
-          icon={Leaf}
-          label="Monthly Reduction"
-          value="420"
-          unit="kg CO₂"
-          trend="up"
-          trendValue="25% more"
-        />
-        <StatsCard
-          icon={Target}
-          label="Goal Progress"
-          value="72"
-          unit="%"
-          trend="up"
-          trendValue="On track"
-        />
-        <StatsCard
-          icon={Award}
-          label="Total Points"
-          value="5,420"
-          trend="up"
-          trendValue="320 points"
-        />
+        {[
+          {
+            icon: Activity,
+            label: "Today's Footprint",
+            value: "32",
+            unit: "kg CO₂",
+            trend: "down",
+            trendValue: "8% less",
+          },
+          {
+            icon: Leaf,
+            label: "Monthly Reduction",
+            value: "420",
+            unit: "kg CO₂",
+            trend: "up",
+            trendValue: "25% more",
+          },
+          {
+            icon: Target,
+            label: "Goal Progress",
+            value: "72",
+            unit: "%",
+            trend: "up",
+            trendValue: "On track",
+          },
+          {
+            icon: Award,
+            label: "Total Points",
+            value: "5,420",
+            trend: "up",
+            trendValue: "320 points",
+          },
+        ].map((card, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
+          >
+            <StatsCard
+              icon={card.icon}
+              label={card.label}
+              value={card.value}
+              unit={card.unit}
+              trend={card.trend}
+              trendValue={card.trendValue}
+            />
+          </motion.div>
+        ))}
       </div>
 
       {/* Charts */}

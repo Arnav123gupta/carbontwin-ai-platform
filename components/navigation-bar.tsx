@@ -8,6 +8,10 @@ const NAV_ITEMS = [
   { label: 'Dashboard', href: '/app/dashboard' },
   { label: 'Carbon Twin', href: '/app/carbon-twin' },
   { label: 'Predictions', href: '/app/predictions' },
+  { label: 'Forest', href: '/app/forest' },
+  { label: 'Game', href: '/app/game' },
+  { label: 'Heatmap', href: '/app/heatmap' },
+  { label: 'Timeline', href: '/app/timeline' },
   { label: 'Rewards', href: '/app/rewards' },
   { label: 'Community', href: '/app/community' },
 ]
