@@ -31,25 +31,16 @@ export default function TimelinePage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div>
         <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
           <Calendar className="w-8 h-8 text-neon-green" />
           Future Timeline Simulator
         </h1>
         <p className="text-muted-foreground">See your carbon footprint projections through 2040</p>
-      </motion.div>
+      </div>
 
       {/* Scenario Toggle */}
-      <motion.div
-        className="flex gap-4"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
+      <div className="flex gap-4">
         {[
           { id: 'current', label: 'Current Trajectory', icon: TrendingDown },
           { id: 'optimistic', label: 'Optimistic Future', icon: Leaf },
@@ -72,14 +63,10 @@ export default function TimelinePage() {
             </motion.button>
           )
         })}
-      </motion.div>
+      </div>
 
       {/* Projection Chart */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
+      <div>
         <GlassmorphicCard>
           <h3 className="text-xl font-bold mb-6">Carbon Footprint Projection</h3>
           <ResponsiveContainer width="100%" height={400}>
@@ -107,25 +94,16 @@ export default function TimelinePage() {
             </LineChart>
           </ResponsiveContainer>
         </GlassmorphicCard>
-      </motion.div>
+      </div>
 
       {/* Key Milestones */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-      >
+      <div>
         <h2 className="text-2xl font-bold mb-4">Key Milestones</h2>
         <div className="space-y-3">
           {data.map((milestone, i) => {
             const isReduction = milestone.reduction > 0
             return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 + i * 0.1 }}
-              >
+              <div key={i}>
                 <GlassmorphicCard>
                   <div className="flex items-center justify-between py-3">
                     <div className="flex items-center gap-4 flex-1">
@@ -151,14 +129,14 @@ export default function TimelinePage() {
                     </div>
                   </div>
                 </GlassmorphicCard>
-              </motion.div>
+              </div>
             )
           })}
         </div>
-      </motion.div>
+      </div>
 
       {/* Impact Comparison */}
-      <motion.div
+      <div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
@@ -227,7 +205,7 @@ export default function TimelinePage() {
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }

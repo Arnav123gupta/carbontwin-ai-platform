@@ -6,6 +6,10 @@ import { motion } from 'framer-motion'
 import { StatsCard } from '@/components/stats-card'
 import { GlassmorphicCard } from '@/components/glassmorphic-card'
 import { ClimateScore } from '@/components/climate-score'
+import { AICarbonAvatar } from '@/components/ai-carbon-avatar'
+import { RealImpactDashboard } from '@/components/real-impact-dashboard'
+import { ClimateMissions } from '@/components/climate-missions'
+import { SustainabilityStreaks } from '@/components/sustainability-streaks'
 
 const WEEKLY_DATA = [
   { day: 'Mon', carbon: 45, target: 40 },
@@ -37,22 +41,39 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div>
         <h1 className="text-4xl font-bold mb-2">Welcome back, Innovator</h1>
         <p className="text-muted-foreground">Track your progress towards a sustainable future</p>
+      </div>
+
+      {/* AI Carbon Avatar */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <AICarbonAvatar name="Champion" greeting="Welcome back! Your impact is growing exponentially." />
       </motion.div>
 
       {/* Climate Score */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
       >
         <ClimateScore score={742} />
+      </motion.div>
+
+      {/* Real Impact Dashboard */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <RealImpactDashboard />
       </motion.div>
 
       {/* KPI Cards */}
@@ -90,21 +111,15 @@ export default function DashboardPage() {
             trendValue: "320 points",
           },
         ].map((card, i) => (
-          <motion.div
+          <StatsCard
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-          >
-            <StatsCard
-              icon={card.icon}
-              label={card.label}
-              value={card.value}
-              unit={card.unit}
-              trend={card.trend}
-              trendValue={card.trendValue}
-            />
-          </motion.div>
+            icon={card.icon}
+            label={card.label}
+            value={card.value}
+            unit={card.unit}
+            trend={card.trend}
+            trendValue={card.trendValue}
+          />
         ))}
       </div>
 
@@ -165,6 +180,26 @@ export default function DashboardPage() {
           </ResponsiveContainer>
         </GlassmorphicCard>
       </div>
+
+      {/* Climate Missions */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <ClimateMissions />
+      </motion.div>
+
+      {/* Sustainability Streaks */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <SustainabilityStreaks />
+      </motion.div>
 
       {/* Activity Feed & Goals */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

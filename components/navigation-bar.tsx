@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react'
 const NAV_ITEMS = [
   { label: 'Dashboard', href: '/app/dashboard' },
   { label: 'Carbon Twin', href: '/app/carbon-twin' },
+  { label: 'Futures', href: '/app/futures' },
   { label: 'Predictions', href: '/app/predictions' },
   { label: 'Forest', href: '/app/forest' },
   { label: 'Game', href: '/app/game' },
