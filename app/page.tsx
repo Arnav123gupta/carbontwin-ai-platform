@@ -7,6 +7,7 @@ import { NavigationBar } from '@/components/navigation-bar'
 import { EarthGlobe } from '@/components/earth-globe'
 import { GlassmorphicCard } from '@/components/glassmorphic-card'
 import { LiveCO2Counter } from '@/components/live-co2-counter'
+import { FloatingParticles } from '@/components/floating-particles'
 import { Button } from '@/components/ui/button'
 
 const FEATURES = [
@@ -126,8 +127,9 @@ export default function Page() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-dark-card/20">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-dark-card/20">
+        <FloatingParticles count={15} />
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
