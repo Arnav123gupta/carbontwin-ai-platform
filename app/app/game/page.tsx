@@ -23,21 +23,13 @@ export default function GamePage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div>
         <h1 className="text-4xl font-bold mb-2">Planet Defense</h1>
         <p className="text-muted-foreground">Master your environmental impact with epic challenges</p>
-      </motion.div>
+      </div>
 
       {/* Player Stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.1 }}
-      >
+      <div>
         <GlassmorphicCard>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Level */}
@@ -144,14 +136,10 @@ export default function GamePage() {
             </div>
           </div>
         </GlassmorphicCard>
-      </motion.div>
+      </div>
 
       {/* Active Challenges */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
+      <div>
         <h2 className="text-2xl font-bold mb-4">Active Challenges</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
@@ -239,28 +227,18 @@ export default function GamePage() {
             )
           })}
         </div>
-      </motion.div>
+      </div>
 
       {/* Play Mission Button */}
-      <motion.div
-        className="flex justify-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-      >
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+      <div className="flex justify-center">
+        <Button
+          onClick={handlePlayMission}
+          className="bg-gradient-to-r from-neon-green to-neon-emerald text-dark-bg font-bold text-lg px-12 h-14 hover:opacity-90"
         >
-          <Button
-            onClick={handlePlayMission}
-            className="bg-gradient-to-r from-neon-green to-neon-emerald text-dark-bg font-bold text-lg px-12 h-14 hover:opacity-90"
-          >
-            <Zap className="w-5 h-5 mr-2" />
-            Start Mission
-          </Button>
-        </motion.div>
-      </motion.div>
+          <Zap className="w-5 h-5 mr-2" />
+          Start Mission
+        </Button>
+      </div>
     </div>
   )
 }

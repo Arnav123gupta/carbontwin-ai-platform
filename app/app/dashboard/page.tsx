@@ -37,20 +37,17 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div>
         <h1 className="text-4xl font-bold mb-2">Welcome back, Innovator</h1>
         <p className="text-muted-foreground">Track your progress towards a sustainable future</p>
-      </motion.div>
+      </div>
 
       {/* Climate Score */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
       >
         <ClimateScore score={742} />
       </motion.div>
@@ -90,21 +87,15 @@ export default function DashboardPage() {
             trendValue: "320 points",
           },
         ].map((card, i) => (
-          <motion.div
+          <StatsCard
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-          >
-            <StatsCard
-              icon={card.icon}
-              label={card.label}
-              value={card.value}
-              unit={card.unit}
-              trend={card.trend}
-              trendValue={card.trendValue}
-            />
-          </motion.div>
+            icon={card.icon}
+            label={card.label}
+            value={card.value}
+            unit={card.unit}
+            trend={card.trend}
+            trendValue={card.trendValue}
+          />
         ))}
       </div>
 

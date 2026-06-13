@@ -39,24 +39,16 @@ export default function ForestPage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div>
         <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
           <Trees className="w-8 h-8 text-neon-green" />
           Your Virtual Forest
         </h1>
         <p className="text-muted-foreground">Every action grows your forest. Plant real trees with your impact!</p>
-      </motion.div>
+      </div>
 
       {/* Forest Visualization */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
+      <div>
         <GlassmorphicCard className="py-12">
           <div className="flex items-end justify-center gap-6 h-96 px-8">
             {TREES.map((tree) => (
@@ -130,7 +122,7 @@ export default function ForestPage() {
             <p className="text-muted-foreground text-sm">Each tree = 50kg CO₂ offset</p>
           </div>
         </GlassmorphicCard>
-      </motion.div>
+      </div>
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -141,28 +133,17 @@ export default function ForestPage() {
         ].map((stat, i) => {
           const Icon = stat.icon
           return (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1 + i * 0.1 }}
-            >
-              <GlassmorphicCard className="text-center">
-                <Icon className="w-8 h-8 text-neon-green mx-auto mb-3" />
-                <p className="text-muted-foreground text-sm mb-2">{stat.label}</p>
-                <p className="text-3xl font-bold text-neon-green">{stat.value}</p>
-              </GlassmorphicCard>
-            </motion.div>
+            <GlassmorphicCard key={i} className="text-center">
+              <Icon className="w-8 h-8 text-neon-green mx-auto mb-3" />
+              <p className="text-muted-foreground text-sm mb-2">{stat.label}</p>
+              <p className="text-3xl font-bold text-neon-green">{stat.value}</p>
+            </GlassmorphicCard>
           )
         })}
       </div>
 
       {/* Active Missions */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1.3 }}
-      >
+      <div>
         <h2 className="text-2xl font-bold mb-4">Planting Missions</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {MISSIONS.map((mission, i) => {
@@ -204,7 +185,7 @@ export default function ForestPage() {
             )
           })}
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }
