@@ -1,33 +1,90 @@
-# carbontwin-ai-platform
+# 🌍 CarbonTwin AI
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+CarbonTwin AI is an AI-powered climate intelligence platform that helps users understand, track, predict, and reduce their carbon footprint through personalized insights, sustainability missions, and future impact simulations.
 
-## Built with v0
+## 🚀 Problem Statement
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+Many people want to live sustainably but do not understand how their daily activities impact the environment. CarbonTwin AI solves this problem by providing an intelligent digital twin that tracks environmental impact and recommends simple actions to reduce emissions.
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_aYghmkPU8eUNdn8hmxX034fuRBJB)
+## 💡 Solution
 
-## Getting Started
+CarbonTwin AI creates a personalized AI-powered Carbon Twin that analyzes lifestyle patterns, visualizes environmental impact, predicts future outcomes, and motivates users through gamification and community engagement.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### 🤖 AI Carbon Twin
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Personalized AI sustainability assistant
+* Lifestyle-based recommendations
+* Interactive climate conversations
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 📊 Climate Dashboard
 
-## Learn More
+* Carbon footprint tracking
+* Climate score calculation
+* Progress monitoring
+* Impact analytics
 
-To learn more, take a look at the following resources:
+### 🌎 Future Earth Simulator
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+* 2030, 2040, and 2050 projections
+* Visual future outcomes
+* Impact-based scenario analysis
+
+### 🎯 Climate Missions
+
+* Daily sustainability tasks
+* Weekly challenges
+* Monthly goals
+* XP rewards and achievements
+
+### 🔥 Sustainability Streaks
+
+* Consecutive eco-friendly action tracking
+* Motivation system
+* Progress visualization
+
+### 🏆 Community Rankings
+
+* Global leaderboard
+* City rankings
+* School rankings
+* Community impact comparison
+
+### 🌱 Environmental Impact Tracking
+
+* Trees saved
+* Water saved
+* Fuel saved
+* CO₂ emissions reduced
+
+## 🛠️ Tech Stack
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* Recharts
+* Vercel
+
+## 🎯 Impact
+
+CarbonTwin AI helps users:
+
+* Understand their carbon footprint
+* Track environmental impact
+* Receive personalized insights
+* Take simple sustainability actions
+* Reduce emissions over time
+
+## 🔗 Live Demo
+
+https://carbontwin-ai-platform-n82h6keru-arnavggj1-1283s-projects.vercel.app
+
+## 📂 GitHub Repository
+
+https://github.com/Arnav123gupta/carbontwin-ai-platform
+
+## 🌍 Vision
+
+If millions of users reduce emissions through small daily actions, the collective environmental impact can be massive. CarbonTwin AI aims to transform climate awareness into measurable climate action through AI.
