@@ -29,14 +29,14 @@ export default function TimelinePage() {
   const data = scenario === 'current' ? TIMELINE_DATA : OPTIMISTIC_DATA
 
   return (
-    <div className="space-y-8">
+    <div className="space-section">
       {/* Header */}
-      <div>
-        <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
+      <div className="space-y-2">
+        <h1 className="flex items-center gap-3">
           <Calendar className="w-8 h-8 text-neon-green" />
           Future Timeline Simulator
         </h1>
-        <p className="text-muted-foreground">See your carbon footprint projections through 2040</p>
+        <p className="text-lg text-muted-foreground font-light">See your carbon footprint projections through 2040</p>
       </div>
 
       {/* Scenario Toggle */}

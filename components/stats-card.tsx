@@ -18,19 +18,23 @@ export function StatsCard({
   trendValue,
 }: StatsCardProps) {
   return (
-    <div className="card-glow rounded-xl p-6 space-y-4">
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-muted-foreground">{label}</p>
-        <Icon className="w-5 h-5 text-neon-green" />
+    <div className="glass-premium rounded-2xl p-6 sm:p-8 space-y-4 hover-lift transition-all duration-300">
+      <div className="flex items-start justify-between">
+        <div className="space-y-1">
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{label}</p>
+        </div>
+        <div className="bg-neon-green/10 rounded-lg p-2">
+          <Icon className="w-5 h-5 text-neon-green" />
+        </div>
       </div>
-      <div>
-        <p className="text-3xl font-bold text-foreground">
+      <div className="space-y-2">
+        <p className="text-4xl sm:text-5xl font-bold text-foreground">
           {value}
-          {unit && <span className="text-sm ml-1 text-muted-foreground">{unit}</span>}
+          {unit && <span className="text-base font-semibold ml-2 text-muted-foreground">{unit}</span>}
         </p>
         {trend && trendValue && (
-          <p className={`text-xs mt-2 ${trend === 'up' ? 'text-emerald-400' : 'text-red-400'}`}>
-            {trend === 'up' ? '↑' : '↓'} {trendValue} from last month
+          <p className={`text-sm font-medium flex items-center gap-1 ${trend === 'up' ? 'text-emerald-400' : 'text-red-400'}`}>
+            <span>{trend === 'up' ? '↑' : '↓'}</span> {trendValue}
           </p>
         )}
       </div>

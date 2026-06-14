@@ -37,19 +37,19 @@ const MISSIONS = [
 
 export default function ForestPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-section">
       {/* Header */}
-      <div>
-        <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
+      <div className="space-y-2">
+        <h1 className="flex items-center gap-3">
           <Trees className="w-8 h-8 text-neon-green" />
           Your Virtual Forest
         </h1>
-        <p className="text-muted-foreground">Every action grows your forest. Plant real trees with your impact!</p>
+        <p className="text-lg text-muted-foreground font-light">Every action grows your forest. Plant real trees with your impact!</p>
       </div>
 
       {/* Forest Visualization */}
       <div>
-        <GlassmorphicCard className="py-12">
+        <GlassmorphicCard premium className="py-16">
           <div className="flex items-end justify-center gap-6 h-96 px-8">
             {TREES.map((tree) => (
               <motion.div

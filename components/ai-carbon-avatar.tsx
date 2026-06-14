@@ -76,20 +76,20 @@ export function AICarbonAvatar({ name = 'User', greeting }: AIAvatarProps) {
 
       {/* Typing message */}
       <motion.div
-        className="glass rounded-xl p-6 min-h-24"
+        className="glass-premium rounded-2xl p-6 sm:p-8 min-h-28"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <p className="text-foreground leading-relaxed">
+        <p className="text-lg text-foreground leading-relaxed font-light">
           {displayedText}
-          {isTyping && <span className="animate-pulse">|</span>}
+          {isTyping && <span className="animate-pulse ml-1">▊</span>}
         </p>
       </motion.div>
 
       {/* Quick actions */}
       <motion.div
-        className="grid grid-cols-2 gap-3"
+        className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
@@ -102,12 +102,12 @@ export function AICarbonAvatar({ name = 'User', greeting }: AIAvatarProps) {
         ].map((action, i) => (
           <motion.button
             key={i}
-            className="glass rounded-lg p-3 text-sm font-medium text-foreground hover:bg-neon-green/10 transition-colors"
+            className="glass-premium rounded-xl p-4 text-sm font-semibold text-foreground hover:border-neon-green/50 interactive-element flex flex-col items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="mr-2">{action.icon}</span>
-            {action.label}
+            <span className="text-xl">{action.icon}</span>
+            <span>{action.label}</span>
           </motion.button>
         ))}
       </motion.div>

@@ -21,16 +21,16 @@ export default function GamePage() {
   const levelProgress = (xp % 1000) / 1000
 
   return (
-    <div className="space-y-8">
+    <div className="space-section">
       {/* Header */}
-      <div>
-        <h1 className="text-4xl font-bold mb-2">Planet Defense</h1>
-        <p className="text-muted-foreground">Master your environmental impact with epic challenges</p>
+      <div className="space-y-2">
+        <h1>Planet Defense</h1>
+        <p className="text-lg text-muted-foreground font-light">Master your environmental impact with epic challenges</p>
       </div>
 
       {/* Player Stats */}
       <div>
-        <GlassmorphicCard>
+        <GlassmorphicCard premium>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Level */}
             <div className="text-center">

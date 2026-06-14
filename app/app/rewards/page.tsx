@@ -21,19 +21,19 @@ const LEADERBOARD = [
 
 export default function RewardsPage() {
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="space-section animate-fade-in">
       {/* Header */}
-      <div>
-        <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
+      <div className="space-y-2">
+        <h1 className="flex items-center gap-3">
           <Trophy className="w-10 h-10 text-neon-green" />
           Rewards & Achievements
         </h1>
-        <p className="text-muted-foreground">Celebrate your sustainability journey</p>
+        <p className="text-lg text-muted-foreground font-light">Celebrate your sustainability journey</p>
       </div>
 
       {/* Points & Level */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <GlassmorphicCard>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <GlassmorphicCard premium>
           <div className="space-y-4">
             <p className="text-sm text-muted-foreground">Total Points</p>
             <p className="text-4xl font-bold text-neon-green">13,220</p>

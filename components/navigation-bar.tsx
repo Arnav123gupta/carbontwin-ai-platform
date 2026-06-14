@@ -21,26 +21,27 @@ export function NavigationBar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="glass fixed top-0 w-full z-50 border-b border-neon-green/20">
+    <nav className="glass-premium sticky top-0 w-full z-50 border-b border-neon-green/20 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-neon-green to-neon-emerald rounded-lg flex items-center justify-center">
-              <span className="text-dark-bg font-bold text-lg">C</span>
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-neon-green to-neon-emerald rounded-xl flex items-center justify-center group-hover:shadow-lg group-hover:shadow-neon-green/30 transition-all duration-300">
+              <span className="text-dark-bg font-bold text-lg">♻</span>
             </div>
-            <span className="text-foreground font-bold hidden sm:inline">CarbonTwin</span>
+            <span className="text-lg font-bold hidden sm:inline bg-gradient-to-r from-neon-green to-neon-emerald bg-clip-text text-transparent">CarbonTwin</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-3 py-2 text-sm font-medium text-foreground hover:text-neon-green transition-colors duration-200 border-b-2 border-transparent hover:border-neon-green"
+                className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors duration-300 relative group"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-neon-green to-neon-emerald rounded-full group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </div>

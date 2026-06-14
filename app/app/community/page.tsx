@@ -47,7 +47,7 @@ const TEAMS = [
     rank: 1,
   },
   {
-    name: 'Eco Warriors',
+    name: 'Eco Warriors', 
     members: 142,
     totalReduction: 42.8,
     rank: 2,
@@ -62,19 +62,19 @@ const TEAMS = [
 
 export default function CommunityPage() {
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="space-section animate-fade-in">
       {/* Header */}
-      <div>
-        <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
+      <div className="space-y-2">
+        <h1 className="flex items-center gap-3">
           <Users className="w-10 h-10 text-neon-green" />
           Community Battles
         </h1>
-        <p className="text-muted-foreground">Join challenges and compete with the global community</p>
+        <p className="text-lg text-muted-foreground font-light">Join challenges and compete with the global community</p>
       </div>
 
       {/* Community Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <GlassmorphicCard>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <GlassmorphicCard premium>
           <div className="space-y-2">
             <p className="text-sm text-muted-foreground flex items-center gap-2">
               <Users className="w-4 h-4" />
